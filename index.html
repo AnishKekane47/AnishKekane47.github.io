@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FolioView</title>
+<meta name="description" content="A monthly look-through report of what your mutual funds actually hold.">
+<style>
+  :root {
+    --ink: #17202a; --muted: #5b6875; --line: #e3e8ee; --bg: #ffffff; --panel: #f7f9fb;
+    --accent: #14532d; --maxw: 44rem;
+  }
+  :root:not([data-theme="light"]) {
+    @media (prefers-color-scheme: dark) {
+      --ink: #e8edf2; --muted: #9aa7b4; --line: #27313c; --bg: #10151b; --panel: #161d25;
+      --accent: #86c99b;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ink: #e8edf2; --muted: #9aa7b4; --line: #27313c; --bg: #10151b; --panel: #161d25;
+    --accent: #86c99b;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font: 17px/1.65 ui-sans-serif, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 16px; }
+  header { padding: 5rem 0 3rem; }
+  .mark { font-weight: 640; letter-spacing: -0.02em; font-size: 1.05rem; color: var(--accent); }
+  h1 { font-size: clamp(2rem, 6vw, 2.9rem); line-height: 1.15; letter-spacing: -0.03em; margin: 1.6rem 0 0.9rem; }
+  .lede { font-size: 1.15rem; color: var(--muted); margin: 0; max-width: 34rem; }
+  h2 { font-size: 1.05rem; letter-spacing: 0.02em; text-transform: uppercase; color: var(--muted);
+       margin: 3.2rem 0 1rem; font-weight: 620; }
+  p { margin: 0 0 1rem; }
+  ul { margin: 0 0 1rem; padding-left: 1.1rem; }
+  li { margin-bottom: 0.6rem; }
+  li b { font-weight: 620; }
+  .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+           padding: 1.25rem 1.35rem; margin: 1rem 0; }
+  .figure { font-variant-numeric: tabular-nums; color: var(--ink); }
+  .figure span { color: var(--muted); }
+  a { color: var(--accent); text-underline-offset: 3px; }
+  footer { border-top: 1px solid var(--line); margin-top: 4rem; padding: 2rem 0 4rem;
+           color: var(--muted); font-size: 0.93rem; }
+  @media (max-width: 480px) { header { padding-top: 3rem; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="mark">FolioView</div>
+    <h1>What your funds actually hold.</h1>
+    <p class="lede">You own eight funds. They own the same twelve companies. FolioView reads through
+    every fund in your portfolio to the securities underneath, once a month, and shows you the
+    result with its sources and dates.</p>
+  </header>
+
+  <h2>What the report measures</h2>
+  <ul>
+    <li><b>Look-through exposure.</b> Every fund opened up to the securities it holds, added across
+      your whole portfolio, so one company appearing in six funds is counted once.</li>
+    <li><b>What moved, and why.</b> Each month-to-month change split into four parts that add back
+      to the whole: what you bought or sold, what other investors did, what the fund manager
+      traded, and what the price did.</li>
+    <li><b>Your own return.</b> A money-weighted return from the transactions your statement lists,
+      beside the same cashflows put into an index fund over the same dates.</li>
+    <li><b>Concentration.</b> Your largest holdings, issuer groups, and how much of the portfolio
+      sits in one company, one issuer or one sector.</li>
+    <li><b>What a fund's category requires.</b> Each equity fund against the floor its SEBI category
+      sets, stated as a measurement and a date, never as a pass or a fail.</li>
+    <li><b>What is missing.</b> Every holding that could not be read, and why, counted in the same
+      report rather than left out of it.</li>
+  </ul>
+
+  <div class="panel figure">
+    83.8% in rank 1–100 companies <span>· the floor for this category is 80% · SEBI, 6 Oct 2017</span><br>
+    HDFC Bank 6.2% of the portfolio <span>· held through 5 of your 8 funds · as at 31 Aug 2026</span>
+  </div>
+
+  <h2>What it does not do</h2>
+  <p>FolioView measures. It does not tell you what to do with what you own, it does not rank or
+  score funds, and it reaches no verdict on anything in your portfolio. Those judgements are yours,
+  and a report that made them for you would be worth less, not more.</p>
+  <p>No language model writes any part of the report. The same portfolio and the same sources
+  produce the same numbers every time.</p>
+
+  <h2>Where the numbers come from</h2>
+  <p>Monthly portfolio disclosures published by the fund houses themselves, NAV and scheme data from
+  AMFI, and your own consolidated account statement from CAMS or KFintech. Every figure in the
+  report carries the source it came from and the date it was true.</p>
+  <p>Where a fund house does not allow automated downloads, FolioView does not work around it. That
+  fund's file is loaded by hand or the report says the month is not covered yet, and names it.</p>
+
+  <h2>Your statement</h2>
+  <p>It is encrypted before it is stored, and it is read to produce your report and nothing else.
+  It is never sold, never shared, and a single button deletes all of it.</p>
+
+  <h2>The beta</h2>
+  <p>FolioView is being built, and is not open yet. Write to
+  <a href="mailto:hello@folioview.me">hello@folioview.me</a> if you would like to hear when it is.</p>
+
+  <footer>
+    FolioView reports what a portfolio holds, with the source and date of every figure.
+    It is descriptive analytics, not investment advice.
+  </footer>
+
+</div>
+</body>
+</html>
