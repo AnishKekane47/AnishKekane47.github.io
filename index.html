@@ -42,6 +42,10 @@
   .figure { font-variant-numeric: tabular-nums; color: var(--ink); }
   .figure span { color: var(--muted); }
   a { color: var(--accent); text-underline-offset: 3px; }
+  .topline { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; }
+  .enter { display: inline-block; border: 1px solid var(--line); border-radius: 8px;
+           padding: 0.4rem 0.9rem; font-size: 0.93rem; text-decoration: none; }
+  .enter:hover { background: var(--panel); }
   footer { border-top: 1px solid var(--line); margin-top: 4rem; padding: 2rem 0 4rem;
            color: var(--muted); font-size: 0.93rem; }
   @media (max-width: 480px) { header { padding-top: 3rem; } }
@@ -51,7 +55,10 @@
 <div class="wrap">
 
   <header>
-    <div class="mark">FolioView</div>
+    <div class="topline">
+      <span class="mark">FolioView</span>
+      <a class="enter" href="https://app.folioview.me">Sign in</a>
+    </div>
     <h1>What your funds actually hold.</h1>
     <p class="lede">You own eight funds. They own the same twelve companies. FolioView reads through
     every fund in your portfolio to the securities underneath, once a month, and shows you the
@@ -101,6 +108,7 @@
   <h2>The beta</h2>
   <p>FolioView is being built, and is not open yet. Write to
   <a href="mailto:hello@folioview.me">hello@folioview.me</a> if you would like to hear when it is.</p>
+  <p><a class="enter" href="https://app.folioview.me">Open the app</a> if you already have an account.</p>
 
   <footer>
     FolioView reports what a portfolio holds, with the source and date of every figure.
